@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "986774087079",
+    "firebase_url": "https://by-urban-default-rtdb.firebaseio.com",
+    "project_id": "by-urban",
+    "storage_bucket": "by-urban.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986774087079:android:9c169207cba7109253c282",
+        "android_client_info": {
+          "package_name": "com.byurban.byurbanapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3ZlinZq0YjOvSsfFnHylkKF96EeZYbCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986774087079:android:b98f337fc8acd8cb53c282",
+        "android_client_info": {
+          "package_name": "com.example.urban_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3ZlinZq0YjOvSsfFnHylkKF96EeZYbCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
