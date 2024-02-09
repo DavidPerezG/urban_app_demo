@@ -11,7 +11,6 @@ class SignupScreen extends StatelessWidget {
     try {
       // Basic email and password validation
       if (email.isEmpty || password.isEmpty) {
-        // Show an error message or perform other actions for invalid input
         print('Invalid email or password');
         return;
       }
@@ -33,7 +32,6 @@ class SignupScreen extends StatelessWidget {
     } catch (e) {
       // Failed Signup
       print('Signup failed: $e');
-      // Show error message or perform other actions
     }
   }
 

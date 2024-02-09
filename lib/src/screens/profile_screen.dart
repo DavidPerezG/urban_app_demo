@@ -1,11 +1,8 @@
-// lib/src/screens/profile_screen.dart
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:urban_app/src/providers/user_provider.dart';
 import 'package:urban_app/src/screens/login_screen.dart';
-import 'package:urban_app/utils/globals.dart';
 import 'package:wordpress_client/wordpress_client.dart';
 import 'package:urban_app/utils/colors.dart';
 

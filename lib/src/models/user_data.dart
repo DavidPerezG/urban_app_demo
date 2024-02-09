@@ -22,8 +22,7 @@ class UserData {
       json['uid'] as String,
       json['name'] as String,
       json['email'] as String,
-      (json['createdAt'] as Timestamp)
-          .toDate(), // Convert Timestamp to DateTime
+      (json['createdAt'] as Timestamp).toDate(),
       json['rol'] as DocumentReference,
     )..uid = json['uid'] as String;
   }
@@ -56,7 +55,6 @@ class UserData {
     }
   }
 
-  // Custom converter for DocumentReference
   static DocumentReference _documentReferenceFromJson(dynamic reference) {
     return FirebaseFirestore.instance.doc(reference);
   }
@@ -65,13 +63,12 @@ class UserData {
     return reference.path;
   }
 
-  // Retrieve the current user's information
   static Future<UserData?> getCurrentUserData() async {
     UserData? user;
     User? userCredential = FirebaseAuth.instance.currentUser;
 
     if (userCredential != null) {
-      String userId = userCredential.uid; // Use uid directly
+      String userId = userCredential.uid;
       user = await getUserDataById(userId);
     }
 

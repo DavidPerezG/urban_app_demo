@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:urban_app/src/screens/intake_screen.dart';
+import 'package:urban_app/src/screens/questionnaire_screen.dart';
+// Import other screens as needed
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -6,12 +9,19 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  // Define a mapping of task names to corresponding screens
+  final Map<String, Widget> taskScreens = {
+    'Intake': IntakeScreen(),
+    'Questionnaire': QuestionnaireScreen(),
+    // Add other screens as needed
+  };
+
   List<Map<String, dynamic>> locations = [
-    {'name': 'Location 1', 'progress': 1.0},
-    {'name': 'Location 2', 'progress': 0.8},
-    {'name': 'Location 3', 'progress': 0.6},
-    {'name': 'Location 4', 'progress': 0.4},
-    {'name': 'Location 5', 'progress': 0.2},
+    {'name': 'Foyer', 'progress': 9.0},
+    {'name': 'Study room', 'progress': 1.0},
+    {'name': 'Piano room/ Sitting area', 'progress': 0.6},
+    {'name': 'Dining room', 'progress': 0.4},
+    {'name': 'Living room', 'progress': 0.1},
   ];
 
   List<Map<String, String>> tasks = [
@@ -42,7 +52,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: Text('Project'),
         actions: [
           IconButton(
             icon: Icon(Icons.exit_to_app),
@@ -52,13 +62,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ],
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: locations.map((location) {
               return ExpansionTile(
+                shape: CircleBorder(eccentricity: 0.1),
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -79,23 +89,40 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
                 initiallyExpanded: false,
                 children: tasks.map((task) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: ListTile(
-                      title: Text(
-                        task['task'] ?? '',
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      subtitle: Text(
-                        task['status'] ?? '',
-                        style: TextStyle(
-                          color: task['status'] == 'Finished'
-                              ? Colors.green
-                              : Colors.orange,
-                        ),
+                  return InkWell(
+                    onTap: () {
+                      // Check if the task name is in the mapping
+                      if (taskScreens.containsKey(task['task'])) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => taskScreens[task['task']]!,
+                          ),
+                        );
+                      }
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16.0, horizontal: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            task['task'] ?? '',
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            task['status'] ?? '',
+                            style: TextStyle(
+                              color: task['status'] == 'Finished'
+                                  ? Colors.green
+                                  : Colors.orange,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   );

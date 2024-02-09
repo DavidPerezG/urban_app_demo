@@ -1,9 +1,7 @@
-// lib/src/screens/home_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:urban_app/src/screens/dashboard_screen.dart';
-import 'chat_screen.dart'; // Import your ChatScreen
-import 'profile_screen.dart'; // Import your ProfileScreen
+import 'chat_screen.dart';
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
