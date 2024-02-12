@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:urban_app/src/screens/intake_screen.dart';
+import 'package:urban_app/src/screens/moodboard.dart';
 import 'package:urban_app/src/screens/questionnaire_screen.dart';
 // Import other screens as needed
 
@@ -13,6 +14,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final Map<String, Widget> taskScreens = {
     'Intake': IntakeScreen(),
     'Questionnaire': QuestionnaireScreen(),
+    'Moodboard': MoodboardScreen(),
     // Add other screens as needed
   };
 

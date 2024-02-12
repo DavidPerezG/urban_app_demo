@@ -40,7 +40,13 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
         'https://docs.google.com/forms/d/e/1FAIpQLSepN3AsrBxHJYdtt0MOeuWrqAHo9NsGzwtnSoJewS97KAH6eg/viewform?usp=sf_link'));
 
   List<Comment> comments = [
-    Comment(name: 'Ludov Garcia', text: 'Ejemplo de comentaio numemero 1'),
+    Comment(
+        name: 'Ludov Garcia',
+        text: 'Ejemplo de comentaio numemero 1',
+        images: [
+          'https://thewowdecor.com/wp-content/uploads/2015/07/Master-Bedroom.jpeg',
+          'https://thewowdecor.com/wp-content/uploads/2015/07/Master-Bedroom.jpg'
+        ]),
     Comment(name: 'Dave P.', text: 'Otro ejemplo de comentario numero 2'),
     Comment(name: 'Dave P.', text: 'Otro ejemplo de comentario numero 2'),
     Comment(name: 'Dave P.', text: 'Otro ejemplo de comentario numero 2'),

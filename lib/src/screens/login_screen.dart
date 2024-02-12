@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:urban_app/src/models/user_data.dart';
 import 'package:urban_app/src/screens/home_screen.dart';
-import 'package:urban_app/src/screens/signup_screen.dart';
-import 'package:urban_app/utils/globals.dart';
 import 'package:urban_app/src/providers/user_provider.dart';
 
 class LoginScreen extends StatelessWidget {

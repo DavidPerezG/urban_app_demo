@@ -1,5 +1,3 @@
-// lib/src/screens/chat_screen.dart
-
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -18,7 +16,6 @@ class _ChatScreenState extends State<ChatScreen> {
         children: [
           Expanded(
             child: ListView(
-              // Add your chat messages here
               children: [
                 // MessageWidget(message: 'Hello!'),
                 // MessageWidget(message: 'Hi there!'),

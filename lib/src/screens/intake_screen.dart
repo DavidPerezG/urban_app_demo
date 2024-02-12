@@ -133,9 +133,3 @@ class _IntakeScreenState extends State<IntakeScreen> {
     );
   }
 }
-
-void main() {
-  runApp(MaterialApp(
-    home: IntakeScreen(),
-  ));
-}
